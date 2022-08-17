@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+
+a {
+  color: $fontColor !important;
+}
+
+nav {
+  border-bottom-color: $borderColor !important;
+}

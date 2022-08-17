@@ -1,10 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomepageComponent } from './Components/homepage/homepage.component';
+import { LoginComponent } from './Components/login/login.component';
+import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
+import { MoviesComponent } from './Components/movies/movies.component';
+import { NotfoundPageComponent } from './Components/notfound-page/notfound-page.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { TvComponent } from './Components/tv/tv.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'register', pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomepageComponent },
+  { path: 'tv', component: TvComponent },
+  { path: 'movies', component: MoviesComponent },
+  { path: 'moviedetails', component: MovieDetailsComponent },
+  { path: '**', component: NotfoundPageComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

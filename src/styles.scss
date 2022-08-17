@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap");
+
+@import "styles/variables";
+
+body {
+  background-color: $bgColor;
+  font-family: "Montserrat", sans-serif;
+  color: $fontColor;
+}
