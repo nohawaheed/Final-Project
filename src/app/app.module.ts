@@ -10,6 +10,8 @@ import { NotfoundPageComponent } from './Components/notfound-page/notfound-page.
 import { RegisterComponent } from './Components/register/register.component';
 import { MoviesComponent } from './Components/movies/movies.component';
 import { TvComponent } from './Components/tv/tv.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,12 @@ import { TvComponent } from './Components/tv/tv.component';
     MoviesComponent,
     TvComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

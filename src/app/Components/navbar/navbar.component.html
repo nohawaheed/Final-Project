@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg boeder border-bottom">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Noxe</a>
+    <a class="navbar-brand fw-bold" routerLink="/home">Noxe</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -14,23 +14,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item" *ngIf="userIsLogin">
+          <a class="nav-link" routerLink="/home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="movies">Movies</a>
+        <li class="nav-item" *ngIf="userIsLogin">
+          <a class="nav-link" routerLink="/movies">Movies</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="tv">Tvshow</a>
+        <li class="nav-item" *ngIf="userIsLogin">
+          <a class="nav-link" routerLink="/tv">Tvshow</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="people">People</a>
+        <li class="nav-item" *ngIf="userIsLogin">
+          <a class="nav-link" routerLink="/people">People</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="networks">Networks</a>
+        <li class="nav-item" *ngIf="userIsLogin">
+          <a class="nav-link" routerLink="/about">About</a>
         </li>
       </ul>
       <form class="d-flex align-items-center">
@@ -53,9 +50,25 @@
           <i class="fa-brands fa-youtube me-4"></i>
         </a>
 
-        <a class="text-decoration-none me-2" href="">Logout</a>
-        <a class="text-decoration-none me-2" routerLink="login">Login</a>
-        <a class="text-decoration-none me-2" routerLink="register">Register</a>
+        <a
+          class="text-decoration-none me-2"
+          *ngIf="userIsLogin"
+          routerLink=""
+          (click)="userLogout()"
+          >Logout</a
+        >
+        <a
+          class="text-decoration-none me-2"
+          *ngIf="!userIsLogin"
+          routerLink="/login"
+          >Login</a
+        >
+        <a
+          class="text-decoration-none me-2"
+          *ngIf="!userIsLogin"
+          routerLink="/register"
+          >Register</a
+        >
       </form>
     </div>
   </div>

@@ -1,1 +1,28 @@
-<p>movie-details works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 my-5">
+      <img [src]="imgSrc + movieDetails.poster_path" class="img-fluid" alt="" />
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h2 class="fs-3 pb-2">{{ movieDetails.title }}</h2>
+      <h3 class="fs-5 pb-2">{{ movieDetails.tagline }}</h3>
+      <ul class="d-flex list-unstyled">
+        <li
+          *ngFor="let genre of movieDetails.genres"
+          class="bg-info border border-info rounded me-2 px-1"
+        >
+          {{ genre.name }}
+        </li>
+      </ul>
+      <ul class="list-unstyled">
+        <li class="pb-3">
+          Vote : {{ movieDetails.vote_average | number: "1.1-1" }}
+        </li>
+        <li class="pb-3">Vote Count : {{ movieDetails.vote_count }}</li>
+        <li class="pb-3">Popularity : {{ movieDetails.popularity }}</li>
+        <li class="pb-3">release date : {{ movieDetails.release_date }}</li>
+      </ul>
+      <p>{{ movieDetails.overview }}</p>
+    </div>
+  </div>
+</div>

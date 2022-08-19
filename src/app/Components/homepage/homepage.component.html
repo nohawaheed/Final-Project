@@ -1,1 +1,69 @@
-<p>homepage works!</p>
+<div class="container pt-4">
+  <div class="row mb-5">
+    <div
+      class="col-md-4 d-flex flex-column justify-content-center border-style mb-5"
+    >
+      <h2 class="py-3">
+        Trending <br />Movies<br />
+        to Watch Now
+      </h2>
+      <p class="text-muted">most watched movies by day</p>
+    </div>
+    <div class="col-md-2" *ngFor="let movie of allMovies">
+      <div class="item position-relative pe-3">
+        <a
+          [routerLink]="['/moviedetails', movie.id]"
+          class="text-decoration-none text-white"
+        >
+          <img [src]="imgsrc + movie.poster_path" alt="" class="w-100" />
+          <h3 class="p-2 h5">{{ movie.title }}</h3>
+          <span class="rate bg-info p-2 position-absolute end-0 top-0">
+            {{ movie.vote_average | number: "1.1-1" }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div
+      class="col-md-4 d-flex flex-column justify-content-center border-style mb-5"
+    >
+      <h2 class="py-3">
+        Trending <br />Tv<br />
+        to Watch Now
+      </h2>
+      <p class="text-muted">most watched Tv by day</p>
+    </div>
+    <div class="col-md-2" *ngFor="let tv of allTv">
+      <div class="position-relative pe-3">
+        <a
+          class="item text-decoration-none text-white"
+          [routerLink]="['/moviedetails', tv.id]"
+        >
+          <img [src]="imgsrc + tv.poster_path" alt="" class="w-100" />
+          <h3 class="p-2 h5">{{ tv.name }}</h3>
+          <span class="rate bg-info p-2 position-absolute end-0 top-0">
+            {{ tv.vote_average | number: "1.1-1" }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div
+      class="col-md-4 d-flex flex-column justify-content-center border-style mb-5"
+    >
+      <h2 class="py-3">
+        Trending <br />People<br />
+        to Watch Now
+      </h2>
+      <p class="text-muted">most watched Tv by day</p>
+    </div>
+    <div class="col-md-2" *ngFor="let people of peoples">
+      <div class="item">
+        <img [src]="imgsrc + people.profile_path" class="w-100" />
+        <h3 class="p-2 h5">{{ people.name }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

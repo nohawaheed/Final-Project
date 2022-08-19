@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { LoginComponent } from './Components/login/login.component';
 import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
@@ -12,10 +13,14 @@ const routes: Routes = [
   { path: '', redirectTo: 'register', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomepageComponent },
-  { path: 'tv', component: TvComponent },
-  { path: 'movies', component: MoviesComponent },
-  { path: 'moviedetails', component: MovieDetailsComponent },
+  { path: 'home', canActivate: [AuthGuard], component: HomepageComponent },
+  { path: 'tv', canActivate: [AuthGuard], component: TvComponent },
+  { path: 'movies', canActivate: [AuthGuard], component: MoviesComponent },
+  {
+    path: 'moviedetails/:id',
+    canActivate: [AuthGuard],
+    component: MovieDetailsComponent,
+  },
   { path: '**', component: NotfoundPageComponent },
 ];
 
