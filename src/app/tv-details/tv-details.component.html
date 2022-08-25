@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 my-5">
-      <img [src]="imgSrc + movieDetails.poster_path" class="img-fluid" alt="" />
+      <img [src]="imgSrc + tvDetails.poster_path" class="img-fluid" alt="" />
     </div>
     <div class="col-md-8 ps-3 d-flex flex-column justify-content-center">
-      <h2 class="fs-3 pb-2">{{ movieDetails.title }}</h2>
-      <h3 class="fs-5 pb-2">{{ movieDetails.tagline }}</h3>
+      <h2 class="fs-3 pb-2">{{ tvDetails.name }}</h2>
+      <h3 class="fs-5 pb-2">{{ tvDetails.tagline }}</h3>
       <ul class="d-flex list-unstyled">
         <li
-          *ngFor="let genre of movieDetails.genres"
+          *ngFor="let genre of tvDetails.genres"
           class="bg-info border border-info rounded me-2 px-1"
         >
           {{ genre.name }}
@@ -16,13 +16,16 @@
       </ul>
       <ul class="list-unstyled">
         <li class="pb-3">
-          Vote : {{ movieDetails.vote_average | number: "1.1-1" }}
+          Vote : {{ tvDetails.vote_average | number: "1.1-1" }}
         </li>
-        <li class="pb-3">Vote Count : {{ movieDetails.vote_count }}</li>
-        <li class="pb-3">Popularity : {{ movieDetails.popularity }}</li>
-        <li class="pb-3">release date : {{ movieDetails.release_date }}</li>
+        <li class="pb-3">Vote Count : {{ tvDetails.vote_count }}</li>
+        <li class="pb-3">Popularity : {{ tvDetails.popularity }}</li>
+        <li class="pb-3">release date : {{ tvDetails.first_air_date }}</li>
+        <li class="pb-3">
+          Number of seasons: {{ tvDetails.number_of_seasons }}
+        </li>
       </ul>
-      <p>{{ movieDetails.overview }}</p>
+      <p>{{ tvDetails.overview }}</p>
     </div>
     <div class="col-md-10">
       <div class="ratio ratio-16x9 mb-5">

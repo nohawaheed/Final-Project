@@ -8,6 +8,7 @@ import { MoviesComponent } from './Components/movies/movies.component';
 import { NotfoundPageComponent } from './Components/notfound-page/notfound-page.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { TvComponent } from './Components/tv/tv.component';
+import { TvDetailsComponent } from './tv-details/tv-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'register', pathMatch: 'full' },
@@ -21,11 +22,16 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: MovieDetailsComponent,
   },
+  {
+    path: 'tvdetails/:id',
+    canActivate: [AuthGuard],
+    component: TvDetailsComponent,
+  },
   { path: '**', component: NotfoundPageComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

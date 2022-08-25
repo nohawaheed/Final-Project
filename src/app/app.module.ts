@@ -12,6 +12,7 @@ import { MoviesComponent } from './Components/movies/movies.component';
 import { TvComponent } from './Components/tv/tv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TvDetailsComponent } from './tv-details/tv-details.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     NotfoundPageComponent,
     MoviesComponent,
     TvComponent,
+    TvDetailsComponent,
   ],
   imports: [
     BrowserModule,
