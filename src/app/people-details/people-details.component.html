@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 my-5">
+      <img
+        [src]="imgSrc + peoleDetails.profile_path"
+        onerror="this.src='assets/images/broken.png';"
+        class="img-fluid"
+        alt=""
+      />
+    </div>
+    <div class="col-md-8 ps-3 d-flex flex-column justify-content-center">
+      <h2 class="fs-3 pb-2">{{ peoleDetails.name }}</h2>
+      <h3 class="fs-5 pb-2">
+        Specialize in {{ peoleDetails.known_for_department }}
+      </h3>
+
+      <ul class="list-unstyled">
+        <li class="pb-3">Place of birth : {{ peoleDetails.place_of_birth }}</li>
+        <li class="pb-3">birth date : {{ peoleDetails.birthday }}</li>
+        <li class="pb-3">Popularity : {{ peoleDetails.popularity }}</li>
+        <li>
+          <a
+            class="btn btn-info"
+            [href]="urlSrc + peoleDetails.imdb_id"
+            target="_blank"
+            >IMDB Profile</a
+          >
+        </li>
+      </ul>
+      <p>{{ showMore ? personBio : showLess + "...." }}</p>
+      <button
+        class="btn btn-info w-25 align-self-center"
+        (click)="toggleShow()"
+      >
+        {{ showMore ? "Show less" : "Show More" }}
+      </button>
+    </div>
+  </div>
+</div>

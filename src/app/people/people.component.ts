@@ -1,32 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { MovieTvDiscoverService } from './../../movie-tv-discover.service';
-import { Movies } from './../../homeInterface/movies';
+import { MovieTvDiscoverService } from '../movie-tv-discover.service';
+import { People } from './../homeInterface/people';
 
 @Component({
-  selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss'],
+  selector: 'app-people',
+  templateUrl: './people.component.html',
+  styleUrls: ['./people.component.scss'],
 })
-export class MoviesComponent implements OnInit {
+export class PeopleComponent implements OnInit {
   constructor(private _movieTvDiscoverService: MovieTvDiscoverService) {}
-  allMovies: Movies[] = [];
-  pageNumber: number = 1;
   imgsrc: string = 'https://image.tmdb.org/t/p/w500';
-  moviePageId: number = 1;
-
+  allPeople: People[] = [];
+  pageNumber: number = 1;
+  peoplePageId: number = 1;
+  getData() {
+    this._movieTvDiscoverService
+      .getPopularPeople(this.pageNumber)
+      .subscribe((response) => {
+        this.allPeople = response.results;
+        this.peoplePageId = response.page;
+      });
+  }
   ngOnInit(): void {
     this.getData();
   }
 
-  getData() {
-    this._movieTvDiscoverService
-      .getMovieDiscover(this.pageNumber)
-      .subscribe((response) => {
-        this.allMovies = response.results;
-        this.moviePageId = response.page;
-      });
-  }
   getNextPage(event: PageEvent) {
     this.pageNumber = event.pageIndex++;
     this.getData();

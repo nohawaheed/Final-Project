@@ -13,7 +13,6 @@ export class HomepageComponent implements OnInit {
   allMovies: Movies[] = [];
   allTv: Tv[] = [];
   peoples: People[] = [];
-  imgNotFound: string = 'image not found';
   imgsrc: string = 'https://image.tmdb.org/t/p/w500';
 
   constructor(private _homeDataService: HomeDataService) {}

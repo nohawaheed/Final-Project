@@ -13,6 +13,12 @@ import { TvComponent } from './Components/tv/tv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TvDetailsComponent } from './tv-details/tv-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HeaderComponent } from './header/header.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { PeopleComponent } from './people/people.component';
+import { PeopleDetailsComponent } from './people-details/people-details.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +32,18 @@ import { TvDetailsComponent } from './tv-details/tv-details.component';
     MoviesComponent,
     TvComponent,
     TvDetailsComponent,
+    HeaderComponent,
+    PeopleComponent,
+    PeopleDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    CarouselModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

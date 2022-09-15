@@ -8,15 +8,26 @@ import { MoviesComponent } from './Components/movies/movies.component';
 import { NotfoundPageComponent } from './Components/notfound-page/notfound-page.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { TvComponent } from './Components/tv/tv.component';
+import { PeopleDetailsComponent } from './people-details/people-details.component';
+import { PeopleComponent } from './people/people.component';
 import { TvDetailsComponent } from './tv-details/tv-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'register', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', canActivate: [AuthGuard], component: HomepageComponent },
   { path: 'tv', canActivate: [AuthGuard], component: TvComponent },
-  { path: 'movies', canActivate: [AuthGuard], component: MoviesComponent },
+  {
+    path: 'movies',
+    canActivate: [AuthGuard],
+    component: MoviesComponent,
+  },
+  {
+    path: 'people',
+    canActivate: [AuthGuard],
+    component: PeopleComponent,
+  },
   {
     path: 'moviedetails/:id',
     canActivate: [AuthGuard],
@@ -26,6 +37,11 @@ const routes: Routes = [
     path: 'tvdetails/:id',
     canActivate: [AuthGuard],
     component: TvDetailsComponent,
+  },
+  {
+    path: 'persondetails/:id',
+    canActivate: [AuthGuard],
+    component: PeopleDetailsComponent,
   },
   { path: '**', component: NotfoundPageComponent },
 ];

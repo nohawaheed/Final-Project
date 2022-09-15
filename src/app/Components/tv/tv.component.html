@@ -1,1 +1,33 @@
-<p>tv works!</p>
+<div class="container pt-4">
+  <div class="row mb-5">
+    <div class="col-md-3" *ngFor="let tv of allTv">
+      <div class="item position-relative pe-3">
+        <a
+          [routerLink]="['/tvdetails', tv.id]"
+          class="text-decoration-none text-white"
+        >
+          <img
+            [src]="imgsrc + tv.poster_path"
+            onerror="this.src='assets/images/broken.png';"
+            alt=""
+            class="w-100"
+          />
+          <h3 class="p-2 h5">{{ tv.name }}</h3>
+          <span class="rate bg-info p-2 position-absolute end-0 top-0">
+            {{ tv.vote_average | number: "1.1-1" }}
+          </span>
+        </a>
+      </div>
+    </div>
+    <mat-paginator
+      class="bg-info"
+      [pageIndex]="0"
+      [length]="500"
+      [pageSize]="20"
+      (page)="getNextPage($event)"
+      (page)="getPreviousPage($event)"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+</div>
