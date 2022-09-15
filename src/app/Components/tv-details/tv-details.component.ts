@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TvDetails } from '../tv-details';
-import { HomeDataService } from './../home-data.service';
+import { TvDetails } from '../../tv-details';
+import { HomeDataService } from '../../home-data.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { keyframes } from '@angular/animations';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { MovieTvDiscoverService } from '../movie-tv-discover.service';
-import { People } from './../homeInterface/people';
+import { MovieTvDiscoverService } from '../../movie-tv-discover.service';
+import { People } from '../../homeInterface/people';
 
 @Component({
   selector: 'app-people',

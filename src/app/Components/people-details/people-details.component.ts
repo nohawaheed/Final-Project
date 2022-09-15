@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HomeDataService } from './../home-data.service';
-import { PeopleDetails } from './../people-details';
+import { HomeDataService } from '../../home-data.service';
+import { PeopleDetails } from '../../people-details';
 
 @Component({
   selector: 'app-people-details',

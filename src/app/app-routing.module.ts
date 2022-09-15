@@ -8,9 +8,9 @@ import { MoviesComponent } from './Components/movies/movies.component';
 import { NotfoundPageComponent } from './Components/notfound-page/notfound-page.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { TvComponent } from './Components/tv/tv.component';
-import { PeopleDetailsComponent } from './people-details/people-details.component';
-import { PeopleComponent } from './people/people.component';
-import { TvDetailsComponent } from './tv-details/tv-details.component';
+import { PeopleDetailsComponent } from './Components/people-details/people-details.component';
+import { PeopleComponent } from './Components/people/people.component';
+import { TvDetailsComponent } from './Components/tv-details/tv-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
