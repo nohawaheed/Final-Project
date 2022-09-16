@@ -10,21 +10,45 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <i class="fa-solid fa-bars text-white fs-lg"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" *ngIf="userIsLogin">
-          <a class="nav-link" routerLink="/home">Home</a>
+          <a
+            class="nav-link"
+            routerLink="/home"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            >Home</a
+          >
         </li>
         <li class="nav-item" *ngIf="userIsLogin">
-          <a class="nav-link" routerLink="/movies">Movies</a>
+          <a
+            class="nav-link"
+            routerLink="/movies"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            >Movies</a
+          >
         </li>
         <li class="nav-item" *ngIf="userIsLogin">
-          <a class="nav-link" routerLink="/tv">Tvshow</a>
+          <a
+            class="nav-link"
+            routerLink="/tv"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            >Tvshow</a
+          >
         </li>
         <li class="nav-item" *ngIf="userIsLogin">
-          <a class="nav-link" routerLink="/people">People</a>
+          <a
+            class="nav-link"
+            routerLink="/people"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            >People</a
+          >
         </li>
       </ul>
       <form class="d-flex align-items-center">
@@ -35,21 +59,40 @@
           placeholder="Search"
           aria-label="Search"
         />
-        <a href="">
-          <i class="fa-brands fa-facebook me-2"></i>
+        <a href="https://www.facebook.com/" target="_blank">
+          <i
+            class="fa-brands fa-facebook me-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          ></i>
         </a>
-        <a href="">
-          <i class="fa-brands fa-spotify me-2"></i>
+        <a href="https://open.spotify.com/" target="_blank">
+          <i
+            class="fa-brands fa-spotify me-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          ></i>
         </a>
-        <a href="">
-          <i class="fa-brands fa-instagram me-2"></i>
+        <a href="https://www.instagram.com/" target="_blank">
+          <i
+            class="fa-brands fa-instagram me-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          ></i>
         </a>
-        <a href="">
-          <i class="fa-brands fa-youtube me-4"></i>
+        <a href="https://www.youtube.com/" target="_blank">
+          <i
+            class="fa-brands fa-youtube me-4"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          >
+          </i>
         </a>
 
         <a
           class="text-decoration-none me-2"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
           *ngIf="userIsLogin"
           routerLink=""
           (click)="userLogout()"
@@ -57,12 +100,16 @@
         >
         <a
           class="text-decoration-none me-2"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
           *ngIf="!userIsLogin"
           routerLink="/login"
           >Login</a
         >
         <a
           class="text-decoration-none me-2"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
           *ngIf="!userIsLogin"
           routerLink="/register"
           >Register</a

@@ -7,3 +7,7 @@ a {
 nav {
   border-bottom-color: $borderColor !important;
 }
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
