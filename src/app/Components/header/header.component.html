@@ -5,6 +5,7 @@
         <img
           [src]="imgsrc + movie.poster_path"
           [alt]="movie.title"
+          onerror="this.src='assets/images/broken.png';"
           class="w-75 rounded m-auto"
         />
       </ng-template>
