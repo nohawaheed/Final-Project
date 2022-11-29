@@ -12,11 +12,10 @@ import { keyframes } from '@angular/animations';
 })
 export class TvDetailsComponent implements OnInit {
   tvId: number = 0;
-  videos: any;
+  videos: any[] = [];
   genre: string = 'tv';
   tvDetails: TvDetails = {} as TvDetails;
   trailerKey: string = '';
-  tvUrl: any;
   viedoSrc: string = '';
   imgSrc: string = 'https://image.tmdb.org/t/p/w500';
   constructor(

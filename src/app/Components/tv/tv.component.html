@@ -24,8 +24,7 @@
       [pageIndex]="0"
       [length]="500"
       [pageSize]="20"
-      (page)="getNextPage($event)"
-      (page)="getPreviousPage($event)"
+      (page)="changePage($event)"
       aria-label="Select page"
     >
     </mat-paginator>

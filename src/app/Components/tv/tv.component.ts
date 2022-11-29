@@ -13,24 +13,24 @@ export class TvComponent implements OnInit {
   allTv: Tv[] = [];
   pageNumber: number = 1;
   imgsrc: string = 'https://image.tmdb.org/t/p/w500';
-  tvPageId: number = 0;
   getData() {
     this._movieTvDiscoverService
       .getTvDiscover(this.pageNumber)
       .subscribe((response) => {
         this.allTv = response.results;
-        this.tvPageId = response.page;
       });
   }
   ngOnInit(): void {
     this.getData();
   }
-  getNextPage(event: PageEvent) {
-    this.pageNumber = event.pageIndex++;
-    this.getData();
-  }
-  getPreviousPage(event: PageEvent) {
-    this.pageNumber = event.pageIndex--;
-    this.getData();
+  changePage(event: PageEvent) {
+    event.pageIndex++;
+    if (this.pageNumber > event.pageIndex) {
+      this.pageNumber = event.pageIndex--;
+      this.getData();
+    } else {
+      this.pageNumber = event.pageIndex++;
+      this.getData();
+    }
   }
 }

@@ -19,7 +19,6 @@ export class MovieDetailsComponent implements OnInit {
   videos: any[] = [];
   genre: string = 'movie';
   trailerKey: string = '';
-  videoUrl: any;
   viedoSrc: string = '';
   movieId: number = 0;
   imgSrc: string = 'https://image.tmdb.org/t/p/w500';
@@ -33,9 +32,7 @@ export class MovieDetailsComponent implements OnInit {
   }
   updateVideoUrl(key: string) {
     this.viedoSrc = 'https://www.youtube.com/embed/' + key;
-    return (this.videoUrl = this._sanitizer.bypassSecurityTrustResourceUrl(
-      this.viedoSrc
-    ));
+    return this._sanitizer.bypassSecurityTrustResourceUrl(this.viedoSrc);
   }
   ngOnInit(): void {
     this.movieId = this._activatedRoute.snapshot.params['id'];
