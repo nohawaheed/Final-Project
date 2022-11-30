@@ -14,9 +14,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this._authService.userData.subscribe((result) => {
-      this.userName = `${result.first_name}${result.last_name}`;
       if (result) {
         this.userIsLogin = true;
+        this.userName = `${result.first_name}${result.last_name}`;
       } else {
         this.userIsLogin = false;
       }
