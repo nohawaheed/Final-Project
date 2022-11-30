@@ -19,10 +19,11 @@ export class TvComponent implements OnInit {
   imgsrc: string = 'https://image.tmdb.org/t/p/w500';
 
   ngOnInit(): void {
-    this._activatedRoute.paramMap.subscribe(
-      (paramMap) => (this.pageNumber = Number(paramMap.get('id')))
-    );
-    this.getData();
+    this._activatedRoute.paramMap.subscribe((paramMap) => {
+      this.pageNumber = Number(paramMap.get('id'));
+      this.getData();
+    });
+    console.log('oninit');
   }
   getData() {
     this._movieTvDiscoverService
@@ -35,10 +36,8 @@ export class TvComponent implements OnInit {
     event.pageIndex++;
     if (this.pageNumber > event.pageIndex) {
       this.pageNumber = event.pageIndex--;
-      this.getData();
     } else {
       this.pageNumber = event.pageIndex++;
-      this.getData();
     }
   }
 }
