@@ -2,7 +2,14 @@
   <main class="container py-5 col-md-8">
     <h3 class="pb-3">Create Account</h3>
     <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm)">
-      <div class="alert alert-danger" *ngIf="errorMessage">
+      <div
+        [class]="
+          errorMessage == 'success'
+            ? 'alert alert-success'
+            : 'alert alert-danger'
+        "
+        *ngIf="errorMessage"
+      >
         {{ errorMessage }}
       </div>
       <div class="py-2">

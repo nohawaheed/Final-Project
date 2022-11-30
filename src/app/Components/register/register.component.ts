@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
         .register(form.value)
         .pipe(takeUntil(this.callRegister))
         .subscribe((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.message == 'sucsess') {
             this._router.navigate(['/login']);
           } else {
