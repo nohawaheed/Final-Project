@@ -21,7 +21,7 @@
     </div>
     <mat-paginator
       class="bg-info"
-      [pageIndex]="0"
+      [pageIndex]="pageNumber - 1"
       [length]="500"
       [pageSize]="20"
       [routerLink]="['/movies', pageNumber]"
