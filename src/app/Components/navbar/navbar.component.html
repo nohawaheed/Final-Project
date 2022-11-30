@@ -26,7 +26,7 @@
         <li class="nav-item" *ngIf="userIsLogin">
           <a
             class="nav-link"
-            routerLink="/movies"
+            [routerLink]="['/movies', pageNumber]"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             >Movies</a
@@ -35,7 +35,7 @@
         <li class="nav-item" *ngIf="userIsLogin">
           <a
             class="nav-link"
-            routerLink="/tv"
+            [routerLink]="['/tv', pageNumber]"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             >Tvshow</a

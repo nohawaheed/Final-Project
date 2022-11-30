@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class NavbarComponent implements OnInit {
   userIsLogin: boolean = false;
+  pageNumber: number = 1;
   constructor(private _authService: AuthService) {}
 
   ngOnInit(): void {

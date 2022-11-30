@@ -24,6 +24,7 @@
       [pageIndex]="0"
       [length]="500"
       [pageSize]="20"
+      [routerLink]="['/movies', pageNumber]"
       (page)="changePage($event)"
       aria-label="Select page"
     >

@@ -17,9 +17,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', canActivate: [AuthGuard], component: HomepageComponent },
-  { path: 'tv', canActivate: [AuthGuard], component: TvComponent },
+  { path: 'tv/:id', canActivate: [AuthGuard], component: TvComponent },
   {
-    path: 'movies',
+    path: 'movies/:id',
     canActivate: [AuthGuard],
     component: MoviesComponent,
   },
