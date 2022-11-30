@@ -88,7 +88,18 @@
           >
           </i>
         </a>
-
+        <a
+          *ngIf="userIsLogin"
+          class="d-flex align-items-center justify-content-center text-decoration-none"
+        >
+          <i
+            class="fa-solid fa-user me-2"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          >
+          </i>
+          <span class="me-4 text-info">{{ userName }}</span>
+        </a>
         <a
           class="text-decoration-none me-2"
           data-bs-toggle="collapse"
@@ -96,7 +107,8 @@
           *ngIf="userIsLogin"
           routerLink=""
           (click)="userLogout()"
-          >Logout</a
+        >
+          Logout</a
         >
         <a
           class="text-decoration-none me-2"
