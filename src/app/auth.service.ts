@@ -18,13 +18,13 @@ export class AuthService {
   userData: BehaviorSubject<any> = new BehaviorSubject(null);
   register(userRegisterData: User): Observable<any> {
     return this._httpClient.post(
-      'https://routeegypt.herokuapp.com/signup',
+      'https://route-egypt-api.herokuapp.com/signup',
       userRegisterData
     );
   }
   signIn(userSignInData: User): Observable<any> {
     return this._httpClient.post(
-      'https://routeegypt.herokuapp.com/signin',
+      'https://route-egypt-api.herokuapp.com/signin',
       userSignInData
     );
   }
@@ -37,7 +37,7 @@ export class AuthService {
 
   saveUser() {
     let userToken = localStorage.getItem('loginToken');
-    // if to check their is data and not null or we can use JSON.strigify(localStorage.getItem('loginToken'));
+    // check if their is data and userToken is not null another way is to use JSON.strigify(localStorage.getItem('loginToken'));
     if (userToken) {
       let data = jwt_decode(userToken);
       this.userData.next(data);
