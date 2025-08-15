@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
 import { ActivatedRoute } from '@angular/router';
 import { MovieTvDiscoverService } from 'src/app/movie-tv-discover.service';
 import { Tv } from './../../homeInterface/tv';

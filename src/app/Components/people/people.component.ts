@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
 import { MovieTvDiscoverService } from '../../movie-tv-discover.service';
 import { People } from '../../homeInterface/people';
 
