@@ -18,13 +18,13 @@ export class AuthService {
   userData: BehaviorSubject<any> = new BehaviorSubject(null);
   register(userRegisterData: User): Observable<any> {
     return this._httpClient.post(
-      'https://route-egypt-api.herokuapp.com/signup',
+      'https://exam.elevateegy.com/api/v1/auth/signup',
       userRegisterData
     );
   }
   signIn(userSignInData: User): Observable<any> {
     return this._httpClient.post(
-      'https://route-egypt-api.herokuapp.com/signin',
+      'https://exam.elevateegy.com/api/v1/auth/signin',
       userSignInData
     );
   }
