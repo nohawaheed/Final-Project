@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [
       Validators.required,
-      Validators.pattern(/^[A-Z][a-z]{4,6}$/),
+      Validators.pattern(/^(?=.*[A-Za-z])(?=.*[@$!%*#?&^_-]).{8,}/),
     ]),
   });
   callRegister: Subject<any> = new Subject();
