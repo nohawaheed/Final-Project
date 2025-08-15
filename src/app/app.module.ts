@@ -16,7 +16,7 @@ import { TvDetailsComponent } from './Components/tv-details/tv-details.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HeaderComponent } from './Components/header/header.component';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { PeopleComponent } from './Components/people/people.component';
 import { PeopleDetailsComponent } from './Components/people-details/people-details.component';
 
