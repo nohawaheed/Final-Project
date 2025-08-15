@@ -4,9 +4,10 @@ import { HomeDataService } from '../../home-data.service';
 import { PeopleDetails } from '../../people-details';
 
 @Component({
-  selector: 'app-people-details',
-  templateUrl: './people-details.component.html',
-  styleUrls: ['./people-details.component.scss'],
+    selector: 'app-people-details',
+    templateUrl: './people-details.component.html',
+    styleUrls: ['./people-details.component.scss'],
+    standalone: false
 })
 export class PeopleDetailsComponent implements OnInit {
   constructor(

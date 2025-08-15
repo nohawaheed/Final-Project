@@ -4,9 +4,10 @@ import { MovieTvDiscoverService } from '../../movie-tv-discover.service';
 import { People } from '../../homeInterface/people';
 
 @Component({
-  selector: 'app-people',
-  templateUrl: './people.component.html',
-  styleUrls: ['./people.component.scss'],
+    selector: 'app-people',
+    templateUrl: './people.component.html',
+    styleUrls: ['./people.component.scss'],
+    standalone: false
 })
 export class PeopleComponent implements OnInit {
   constructor(private _movieTvDiscoverService: MovieTvDiscoverService) {}

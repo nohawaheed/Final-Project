@@ -5,9 +5,10 @@ import { MovieTvDiscoverService } from 'src/app/movie-tv-discover.service';
 import { Tv } from './../../homeInterface/tv';
 
 @Component({
-  selector: 'app-tv',
-  templateUrl: './tv.component.html',
-  styleUrls: ['./tv.component.scss'],
+    selector: 'app-tv',
+    templateUrl: './tv.component.html',
+    styleUrls: ['./tv.component.scss'],
+    standalone: false
 })
 export class TvComponent implements OnInit {
   constructor(

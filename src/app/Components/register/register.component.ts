@@ -5,9 +5,10 @@ import { Subject, takeUntil } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.scss'],
+    standalone: false
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({

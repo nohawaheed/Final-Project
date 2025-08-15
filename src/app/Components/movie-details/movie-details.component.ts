@@ -5,9 +5,10 @@ import { HomeDataService } from './../../home-data.service';
 import { MovieDetails } from './../../homeInterface/movie-details';
 
 @Component({
-  selector: 'app-movie-details',
-  templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.scss'],
+    selector: 'app-movie-details',
+    templateUrl: './movie-details.component.html',
+    styleUrls: ['./movie-details.component.scss'],
+    standalone: false
 })
 export class MovieDetailsComponent implements OnInit {
   constructor(

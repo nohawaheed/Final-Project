@@ -6,9 +6,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { keyframes } from '@angular/animations';
 
 @Component({
-  selector: 'app-tv-details',
-  templateUrl: './tv-details.component.html',
-  styleUrls: ['./tv-details.component.scss'],
+    selector: 'app-tv-details',
+    templateUrl: './tv-details.component.html',
+    styleUrls: ['./tv-details.component.scss'],
+    standalone: false
 })
 export class TvDetailsComponent implements OnInit {
   tvId: number = 0;

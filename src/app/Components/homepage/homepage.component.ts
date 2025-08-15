@@ -5,9 +5,10 @@ import { Tv } from './../../homeInterface/tv';
 import { People } from './../../homeInterface/people';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+    selector: 'app-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrls: ['./homepage.component.scss'],
+    standalone: false
 })
 export class HomepageComponent implements OnInit {
   allMovies: Movies[] = [];
