@@ -33,16 +33,18 @@
 // @include mat.all-component-themes($finalProject-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@use "styles/variables";
+
+@use "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap");
 
-@import "styles/variables";
 
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
 body {
-  background-color: $bgColor;
+  background-color: variables.$bgColor;
   font-family: "Montserrat", sans-serif !important;
-  color: $fontColor;
+  color: variables.$fontColor;
 }
 
 html,
