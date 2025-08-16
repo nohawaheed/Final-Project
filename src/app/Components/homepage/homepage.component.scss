@@ -1,12 +1,12 @@
-@import "../../../styles/variables";
+@use "../../../styles/variables";
 
 .border-style::after {
   content: "";
-  border: 1px solid $borderColor;
+  border: 1px solid variables.$borderColor;
 }
 
 .border-style::before {
   content: "";
-  border: 1px solid $borderColor;
+  border: 1px solid variables.$borderColor;
   width: 25%;
 }

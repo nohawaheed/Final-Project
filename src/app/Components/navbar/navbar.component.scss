@@ -1,11 +1,11 @@
-@import "src/styles/variables";
+@use "src/styles/variables";
 
 a {
-  color: $fontColor !important;
+  color: variables.$fontColor !important;
 }
 
 nav {
-  border-bottom-color: $borderColor !important;
+  border-bottom-color: variables.$borderColor !important;
 }
 
 .navbar-toggler:focus {
